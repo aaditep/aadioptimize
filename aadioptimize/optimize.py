@@ -1,7 +1,7 @@
 import numpy.matlib as mat
 import numpy as np
 
-
+N =1
 
 def initDE(N_p,lb,ub,prob):
             lb = np.full(N_p,lb)
@@ -66,17 +66,17 @@ def crossover(f,P_c_min,P_c_max,i,D,V,P,U):
             return U
 
 #this function bounds the vector and replaces the old target vector with new if better
-def boundgreed(j,U,P,f,fu,ub,lb,prob):
+def boundgreed(N,j,U,P,f,fu,ub,lb,prob):
             
             U[j]=np.minimum(U[j], ub)
             U[j]=np.maximum(U[j], lb)
     
             fu[j]=prob(U[j])
-
+            N = N+1
             if fu[j] < f[j]:
                 P[j]= U[j]
                 f[j]=fu[j]
-            return fu,f,P
+            return N,fu,f,P
 
 #distance from known location
 def distance(known_loc,found_loc,N_vars,):
@@ -91,7 +91,7 @@ def distance(known_loc,found_loc,N_vars,):
 
 
 
-def aadioptimize(N_p,T,lb,ub,prob,N_vars,F_min,F_max,F_const,P_c_min,P_c_max):
+def main(N,N_p,T,lb,ub,prob,N_vars,F_min,F_max,F_const,P_c_min,P_c_max):
             lb,ub,f,fu,D,U,P = initDE(N_p,lb,ub,prob)
             if N_p < 4:
                 raise Exception("Sorry, there must be atleast a population of 4. Reccomended 20")
@@ -105,8 +105,10 @@ def aadioptimize(N_p,T,lb,ub,prob,N_vars,F_min,F_max,F_const,P_c_min,P_c_max):
     
                 for j in np.arange(N_p):    
         
-                    fu,f,P = boundgreed(j,U,P,f,fu,ub,lb,prob)
-        
+                    N,fu,f,P = boundgreed(N,j,U,P,f,fu,ub,lb,prob)
+                if N == 50000:
+                    break
+
             best_of_f= min(f)
             globopt = P[f.argmin()]
-            return best_of_f, globopt[:N_vars]
+            return N,best_of_f, globopt[:N_vars]
