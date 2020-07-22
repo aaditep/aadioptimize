@@ -1,7 +1,2 @@
-from . import aadioptimize
-from . import funcs
+from . import optimize
 
-__all__ = [
-    'aadioptimize',
-    'funcs'
-]

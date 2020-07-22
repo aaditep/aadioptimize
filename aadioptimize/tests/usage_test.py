@@ -1,3 +1,7 @@
+import aadioptimize
+from aadioptimize import funcs
+from funcs import rosenbrock
+
 N_p = 25 #Number of population
 T = 500 #number of iterations
 
