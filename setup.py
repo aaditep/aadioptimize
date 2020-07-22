@@ -2,7 +2,7 @@ from setuptools import setup
 
 setup(
     name="aadioptimize",
-    version='0.0.5',
+    version='0.0.7',
     description='Perform optimization for function',
     url='https://github.com/aaditep/aadioptimize',
     author='Aadi Tepper',
