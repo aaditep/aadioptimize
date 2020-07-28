@@ -1,6 +1,7 @@
 import numpy.matlib as mat
 import numpy as np
 
+
 N =1
 
 def initDE(N_p,lb,ub,prob):
@@ -52,7 +53,7 @@ def initDE(N_p,lb,ub,prob):
     
     U = np.zeros((N_p,D)) #Matrix for storing trial solutions 
         
-    #Initial random population !!!!!MIND THE "LEN", I DONT KNOW if that works"
+    #Initial random population 
     P = mat.repmat(lb,N_p,1)+mat.repmat((ub-lb),N_p,1)*np.random.rand(len(ub-lb),N_p)
         
     for p in np.arange(N_p):
@@ -65,7 +66,7 @@ def initDE(N_p,lb,ub,prob):
 
 
 #This function starts the mutation process and generates a donorvector
-def mutation1(i,N_p,t,T,P,N_vars,F_min,F_const):
+def mutation(i,N_p,t,T,P,N_vars,F_min,F_const):
     """ 
     Function that generates a donorvector. If there is >=3 searchvariables then the 
     adaptive scaling factor is implimented. Otherwise just the constant. It gnerates 
@@ -289,7 +290,7 @@ def main(N,N_p,T,lb,ub,prob,N_vars,F_min,F_const,P_c_min,P_c_max):
         raise Exception("Sorry, there must be atleast a population of 4. Reccomended 20")
     for t in np.arange(T):
         for i in np.arange(N_p):
-            V = mutation1(i,N_p,t,T,P,N_vars,F_min,F_const)
+            V = mutation(i,N_p,t,T,P,N_vars,F_min,F_const)
 
             U=crossover(f,P_c_min,P_c_max,i,D,V,P,U)
 
