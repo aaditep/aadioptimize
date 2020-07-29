@@ -1,8 +1,8 @@
 import unittest
-import optimize
-import funcs
+from aadioptimize import optimize
+from funcs import funcs
 import numpy as np
-from random import Random
+
 class TestOptimize(unittest.TestCase):
 	
 	def test_distance(self):

@@ -249,6 +249,9 @@ def main(N,N_p,T,lb,ub,prob,N_vars,F_min,F_const,P_c_min,P_c_max):
 
     Parameters
     ----------
+    N : int
+        Number of evaluations counter
+
     N_p : int
         Number of population
     T : int
