@@ -150,7 +150,7 @@ def crossover(f,P_c_min,P_c_max,i,D,V,P,U):
     """
     #ADAPTIVE Crossover
     if f[i] < np.mean(f):
-        P_c = P_c_min + (P_c_max-P_c_min)*((f[i]-np.mean(f))/(np.max(f)-np.mean(f)))
+        P_c = P_c_min  + (P_c_max-P_c_min)*((f[i]-np.mean(f))/(np.max(f)-np.mean(f)))
     else:
         P_c = P_c_min
 
