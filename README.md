@@ -36,14 +36,17 @@ N_vars=2 #Number of search variables from fitness function
 F_min=0.5 #minimum fot adaptive Scaling Factor
 F_const=0.32  # Scaling factor should be constant if only 1-2 dimensonal function.
 
-#Paramaters for adaptive crossover probability. 
+#Paramaters for adaptive crossover probability. Usually between 0-1. Since this example is for 507 evaluations then
+#by trial and error these settings worked pretty well.
 P_c_min=1.7
 P_c_max=1.9
 #THe function aadioptimiz is the function itself it takes arguments 
-#in same order as the problem settings. It returns best fitness function value and the 
-#optimum location
+#in same order as the problem settings. It returns number of evaaluations
+#best fitness function value and optimum location.
 N,best_of_f, globopt = main(N,N_p,T,lb,ub,prob,N_vars,F_min,F_const,P_c_min,P_c_max)	
 
+
+# A d
 #Found optimization location
 found_loc =globopt
 #Known location
