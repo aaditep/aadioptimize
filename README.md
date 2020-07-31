@@ -21,6 +21,7 @@ import numpy as np
 
 
 #Paramaters for Differential Evolution
+#These are set up for 507 evaluations
 N =0 #number of evaluation counter
 N_p = 22#Number of population
 T = 23 #number of iteratons
