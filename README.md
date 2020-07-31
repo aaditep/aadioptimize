@@ -60,3 +60,29 @@ print(f'Best fitness function value found was:{best_of_f}')
 print(f'Number of evaluations {N+1}')
 ```
 
+## Usage example nr.2 of 10000 evaluations.
+
+```python
+
+#Paramaters for Differential Evolution
+N =0
+N_p = 20#Number of population
+T = 500
+lb = -100 #searchspace lower bound
+ub =100  #searchspace upper bound	
+
+prob = rosenbrock#the fbitness function
+N_vars=2 #Number of search variables from fitness function	
+
+#Paramaters for adaptive  Scaling FACTOR F (between 0-1)
+F_min=0.5 #minimum fot adaptive Scaling Factor
+F_const=0.333 # Scaling factor should be constant if only 1-2 dimensonal function.
+
+#Paramaters for adaptive crossover probability. 
+P_c_min=0.6
+P_c_max=0.9
+#THe function aadioptimiz is the function itself it takes arguments 
+#in same order as the problem settings. It returns best fitness function value and the 
+#optimum location
+N,best_of_f, globopt = main(N,N_p,T,lb,ub,prob,N_vars,F_min,F_const,P_c_min,P_c_max)
+```
