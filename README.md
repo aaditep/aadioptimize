@@ -35,11 +35,11 @@ N_vars=2 #Number of search variables from fitness function
 
 #Paramaters for adaptive  Scaling FACTOR F (between 0-1)
 F_min=0.5 #minimum fot adaptive Scaling Factor
-F_const=0.32  # Scaling factor should be constant if only 1-2 dimensonal function.
+F_const=0.333  # Scaling factor should be constant if only 1-2 dimensonal function.
 
 #Paramaters for adaptive crossover probability. Usually between 0-1. Since this example is for 507 evaluations then
 #by trial and error these settings worked pretty well.
-P_c_min=1.7
+P_c_min=1.6
 P_c_max=1.9
 #THe function aadioptimiz is the function itself it takes arguments 
 #in same order as the problem settings. It returns number of evaaluations
