@@ -1,0 +1,8 @@
+aadioptimize.egg-info
+build
+dist
+funcs/__pycache__/
+funcs/__init__.py
+aadioptimize/__init__.py
+
+aadioptimize/__pycache__
