@@ -5,7 +5,7 @@ An optimization utility for hyperparamaters.
 ## Installation
 
 ```bash
-pip install https://github.com/aaditep/aadioptimize.git
+pip install git+https://github.com/aaditep/aadioptimize.git
 ```
 ## Usage
 
